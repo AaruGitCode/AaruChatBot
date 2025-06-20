@@ -50,7 +50,7 @@ const Login = () => {
             Login
           </button>
           <p className="text-center text-sm mt-2 text-gray-600 dark:text-gray-300">
-            Don’t have an account? <a href="/register" className="text-blue-500">Register</a>
+            Don’t have an account? <a href="/Register" className="text-blue-500">Register</a>
           </p>
         </div>
       </div>
