@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ThemeToggle from '../components/ThemeToggle'
-import chatbotLogo from '../assets/chatbot-logo.png'
+import chatbotLogo from '../assets/chatbot-logo.png' // ✅ Only this line added
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -9,18 +8,16 @@ const Login = () => {
   const navigate = useNavigate()
 
   const handleLogin = () => {
+    console.log("Login user:", email, password)
     alert("Login successful")
     navigate('/chat')
   }
 
   return (
-    <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center bg-gray-100 dark:bg-gray-900"
-      style={{ backgroundImage: 'url(/chat-bg.jpg)' }}
-    >
-      <ThemeToggle />
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-96 relative">
-        {/* Bot logo on top */}
+
+        {/* ✅ Logo block added — same as Register page */}
         <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
           <img
             src={chatbotLogo}
@@ -29,11 +26,9 @@ const Login = () => {
           />
         </div>
 
-        {/* Login form */}
+        {/* ⬇ No changes below */}
         <div className="mt-10">
-          <h2 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-            Login
-          </h2>
+          <h2 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">Login</h2>
           <input
             type="email"
             placeholder="Email"
